@@ -5,15 +5,15 @@ import java.util.TimerTask;
 
 public class Main {
     public static void main(String[] args) {
+
         int number=0;
-
-
         System.out.println("I own " + number + " " + pluralize("cat", number) + ".");
         flip(3);
         flip(7);
         flip(5);
 
-        clock();    }
+        clock();
+    }
 
     public static String pluralize(String string, int number){
 
@@ -43,6 +43,7 @@ public class Main {
             if (random < .5) {
                 System.out.println("TAILS");
                 flips++;
+                headsCounter=0;
             }
             if (random >.5) {
                 System.out.println("HEADS");
@@ -58,13 +59,13 @@ public class Main {
         int initial = 0;
         int interval = 1000;
         Timer timer = new Timer();
-        String time = "HH:mm:ss";
+        String timeDate = "HH:mm:ss";
 
-        TimerTask task = new TimerTask() {
+        TimerTask timertask = new TimerTask() {
             public void run() {
-                System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern(time)));
+                System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern(timeDate)));
             }
         };
-        timer.scheduleAtFixedRate(task, initial, interval);
+        timer.scheduleAtFixedRate(timertask, initial, interval);
     }
 }
