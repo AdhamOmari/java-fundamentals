@@ -8,9 +8,10 @@ public class Main {
 
         int number=0;
         System.out.println("I own " + number + " " + pluralize("cat", number) + ".");
-        flip(3);
+       
         flip(7);
-        flip(5);
+
+
 
         clock();
     }
@@ -31,12 +32,10 @@ public class Main {
     }
 
     public static void flip(int n) {
-
-        int numberToFlip = 0;
         int flips = 0;
         int headsCounter = 0;
 
-        while(numberToFlip <=n) {
+        while(headsCounter <n) {
 
             double random = Math.random();
 
@@ -48,7 +47,7 @@ public class Main {
             if (random >.5) {
                 System.out.println("HEADS");
                 headsCounter++;
-                numberToFlip++;
+
                 flips++;
             };
         }
