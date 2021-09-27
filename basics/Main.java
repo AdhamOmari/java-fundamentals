@@ -8,7 +8,7 @@ public class Main {
 
         int number=0;
         System.out.println("I own " + number + " " + pluralize("cat", number) + ".");
-       
+
         flip(7);
 
 
