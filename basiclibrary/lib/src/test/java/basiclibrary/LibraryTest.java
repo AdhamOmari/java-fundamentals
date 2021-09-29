@@ -11,4 +11,23 @@ class LibraryTest {
         Library classUnderTest = new Library();
         assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
     }
+    @Test
+    public void testroll() {
+
+        int test = 4;
+        assertEquals(test, Library.roll(test).length, "The size test passed");
+    }
+    @Test
+    public void containsDuplicates() {
+        int[] test = new int[]{ 4, 4, 5};
+
+        assertTrue(Library.containsDuplicates(test), "someLibraryMethod should return 'true'");
+
+    }
+    @Test
+    public void Average(){
+        int [] arr ={1,1,1};
+        int av= 1;
+        assertEquals( av, Library.averageArry(arr));
+    }
 }

@@ -3,7 +3,7 @@
  */
 package basiclibrary;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Library {
 
@@ -11,18 +11,19 @@ public class Library {
         return true;
     }
 
-    public static void roll(int n) {
+    public static int [] roll(int n) {
 
         int[] rolls = new int[n];
         System.out.println(n);
-        ArrayList<Integer> number = new ArrayList<>();
+        int [] number = new int [n];
 
         for (int i = 0; i < rolls.length; i++) {
             int random = (int) Math.ceil(Math.random() * 6);
-            number.add(random);
+            number[i]=random;
 
         }
-        System.out.println(number);
+        System.out.println(Arrays.toString(number));
+        return number;
     }
 
     public static boolean containsDuplicates(int[] arry) {
@@ -37,36 +38,38 @@ public class Library {
         return false;
     }
 
-    public static void Average(int[] array) {
+    public static double averageArry(int[] array) {
+        double endAvg=0;
         double sumOfAr = 0;
         for (int value : array) {
             sumOfAr += value;
         }
-        System.out.println(sumOfAr / array.length);
+        endAvg=sumOfAr / array.length;
+        return endAvg;
     }
 
-    public static double weeklyMonthTemperatures(int[][] arr) {
+    public static int [] weeklyMonthTemperatures(int[][] arr) {
+        double lowestArryAvg=0;
         double[] avarges = new double[arr.length];
 
         double finalAv = 0;
         for (int i = 0; i < arr.length; i++) {
             double sum = 0;
-
             for (int j = 0; j < arr[i].length; j++) {
-
                 sum += arr[i][j];
             }
             avarges[i] = sum / arr[i].length;
         }
+        lowestArryAvg=avarges[0];
+        int finalArry=0;
         for (int i = 0; i < avarges.length; i++) {
-            for (int j = 0; j < avarges.length; j++) {
-                if (avarges[i] < avarges[j]) {
-                    finalAv = avarges[i];
-                }
-            }
+           if(avarges[i]<lowestArryAvg){
+               finalArry=i;
+           }
+
         }
 
-        return finalAv;
+        return arr[finalArry];
     }
 
 }

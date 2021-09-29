@@ -6,10 +6,10 @@ import java.util.TimerTask;
 public class Main {
     public static void main(String[] args) {
 
-        int number=0;
+        int number=1;
         System.out.println("I own " + number + " " + pluralize("cat", number) + ".");
        
-        flip(7);
+        flip(2);
 
 
 
