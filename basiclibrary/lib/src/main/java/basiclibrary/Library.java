@@ -4,73 +4,134 @@
 package basiclibrary;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
 
 public class Library {
 
-    public boolean someLibraryMethod() {
-        return true;
-    }
 
-    public static int [] roll(int n) {
 
-        int[] rolls = new int[n];
-        System.out.println(n);
-        int [] number = new int [n];
-
-        for (int i = 0; i < rolls.length; i++) {
+    public static int[] roll(int n) {
+        int[] arry = new int[n];
+        for (int index = 0; index < arry.length; index++) {
             int random = (int) Math.ceil(Math.random() * 6);
-            number[i]=random;
-
+            arry[index]=random;
         }
-        System.out.println(Arrays.toString(number));
-        return number;
+
+
+
+
+        System.out.println(Arrays.toString(arry) );
+
+
+
+
+
+
+
+
+        return arry;
     }
 
-    public static boolean containsDuplicates(int[] arry) {
 
-        for (int itemAryOne = 0; itemAryOne < arry.length; itemAryOne++) {
-            for (int itemAryTow = 0; itemAryTow < itemAryOne; itemAryTow++) {
-                if (arry[itemAryOne] == arry[itemAryTow]) {
+
+    public static double avgArray(int[] array) {
+        double sum = 0;
+        for (int value : array) {
+            sum += value;
+        }
+        return (sum / array.length);
+    }
+    public static boolean containsDuplicates(int[] arr) {
+
+        for (int index = 0; index < arr.length; index++) {
+            for (int indexArry02 = index + 1; indexArry02 < arr.length; indexArry02++) {
+
+                if (arr[index] == arr[indexArry02]) {
+
+//
                     return true;
                 }
             }
         }
         return false;
+
     }
+    public static int[] arrayOfArrays(int [][] arr){
 
-    public static double averageArry(int[] array) {
-        double endAvg=0;
-        double sumOfAr = 0;
-        for (int value : array) {
-            sumOfAr += value;
-        }
-        endAvg=sumOfAr / array.length;
-        return endAvg;
-    }
-
-    public static int [] weeklyMonthTemperatures(int[][] arr) {
-        double lowestArryAvg=0;
-        double[] avarges = new double[arr.length];
-
-        double finalAv = 0;
-        for (int i = 0; i < arr.length; i++) {
+        double [] avargesArry =new double[arr.length];
+        double AvgResult =0;
+        for (int index=0;index<arr.length;index++){
             double sum = 0;
-            for (int j = 0; j < arr[i].length; j++) {
-                sum += arr[i][j];
+            double arrLength=0;
+            for (int indexArry02 =0;indexArry02<arr[index].length;indexArry02++){
+                sum += arr[index][indexArry02];
             }
-            avarges[i] = sum / arr[i].length;
-        }
-        lowestArryAvg=avarges[0];
-        int finalArry=0;
-        for (int i = 0; i < avarges.length; i++) {
-           if(avarges[i]<lowestArryAvg){
-               finalArry=i;
-           }
 
+//            avargesArry[index]=sum/arr[index].length;
         }
 
-        return arr[finalArry];
+        AvgResult=avargesArry[0];
+        int lewestArryAvg=0;
+        for (int i = 1; i < avargesArry.length; i++) {
+            if (avargesArry[i] < AvgResult) {
+                AvgResult = avargesArry[i];
+                lewestArryAvg=i;
+            }
+        }
+
+        return arr[lewestArryAvg];
     }
+    public boolean someLibraryMethod() {
+        return true;
+
+    }
+
+
+    public static String analyzeWeathData(int[][] data) {
+        HashSet<Integer> Tempratuer = new HashSet<>();
+        for (int i = 0; i < data.length; i++) {
+            for (int temp : data[i]) {
+                Tempratuer.add(temp);
+            }
+        }
+
+        String minTemp = "Low Temperature " + Collections.min(Tempratuer);
+        String maxTemp = "\nHigh Temperature " + Collections.max(Tempratuer);
+        String neverSawTemp = "";
+        for (int i = Collections.min(Tempratuer); i < Collections.max(Tempratuer); i++) {
+            if (!Tempratuer.contains(i)) {
+                neverSawTemp += "\nNever saw temperature: " + i;
+
+            }
+        }
+        return minTemp + maxTemp + neverSawTemp;
+
+    }
+
+
+    public static String tally(List<String> votes) {
+        if (votes.isEmpty()) return "0";
+
+        HashSet<String> votedvalue = new HashSet<>();
+        votedvalue.addAll(votes);
+
+        int numVotes = 0;
+        String winner = null;
+
+        for (String value : votedvalue) {
+            int count = Collections.frequency(votes, value);
+            if (numVotes < count) {
+                numVotes = count;
+
+                winner = "\n"+ value + " received the most votes!";
+            }
+        }
+
+        return winner;
+    }
+
 
 }
 
