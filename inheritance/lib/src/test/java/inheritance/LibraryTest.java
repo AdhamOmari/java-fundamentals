@@ -7,18 +7,23 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    @Test
-    void someLibraryMethodReturnsTrue() {
-        Library classUnderTest = new Library();
-        assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
-    }
+
+
     @Test void one() {
-        Restaurant classUnderTest = new Restaurant("ali",5,10.2);
-        assertEquals("Restaurant{NameShop='ali', rateNumber=5, priceCost='10.2'}",classUnderTest.toString(),"dd");
+        Restaurant test = new Restaurant("mac","1");
+        assertEquals("Restaurant{name='mac, stars=2, price='1', reviews=[Review{body='d', author='start', stars=3, Review{body='d', author='start', stars=3, Review{body='ss', author='start', stars=2]}> but was: <Restaurant{name='ali' \n" +
+                ", stars=0 \n" +
+                ", price='1' \n" +
+                ", reviews=[] \n" +
+                "}> but was: <Restaurant{name='mac' \n" +
+                ", stars=0 \n" +
+                ", price='1' \n" +
+                ", reviews=[] \n" +
+                "}",test.toString(),"dd");
     }
     @Test void tow() {
-        ReviewRestorant classUnderTest = new ReviewRestorant("ali",5);
-        assertEquals("ReviewRestorant{author='ali', starNumber=5}",classUnderTest.toString(),"dd");
+        Review ss = new Review("ali","ali",5);
+        assertEquals("ReviewRestorant{author='ali', starNumber=5}",ss.toString(),"dd");
     }
-}
+
 }
