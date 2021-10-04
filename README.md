@@ -26,4 +26,10 @@ if it below  0.5 it will  considered tails. and above considered heads
 > 
 > 
 > lab 03 Lab: 03 - Maps and File I/OLab: 03 - Maps and File I/O
-> we need add function that can return the temp and we have file we need to read from it and cheek for some condetion if it in the file 
+> we need add function that can return the temp and we have file we need to read from it and cheek for some condetion if it in the file
+> 
+> lab 06 
+> Create a class to represent a Restaurant
+> Create a class to represent a Review.
+> insid it we do Write a Review constructor.
+> toString method for Reviews.
