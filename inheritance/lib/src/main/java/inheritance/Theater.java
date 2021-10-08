@@ -38,12 +38,14 @@ public class Theater implements User{
         }
         return  theaterReview;
     }
-    public void addtheMovie(String movies){
-        Movies.add(movies);
+    public Object addtheMovie(String movies){
+
+          Movies.add(movies);
+        return Movies.toString();
     }
 
-    public void  removedMovie(String movies){
-        Movies.remove(movies);
+    public Object removedMovie(String movies){
+        return Movies.toString();
     }
     @Override
     public void addReview(Review review) {
