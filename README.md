@@ -27,6 +27,17 @@ if it below  0.5 it will  considered tails. and above considered heads
 > 
 > lab 03 Lab: 03 - Maps and File I/OLab: 03 - Maps and File I/O
 > we need add function that can return the temp and we have file we need to read from it and cheek for some condetion if it in the file
+
+
+
+lab04
+> 1.  building a bitmap (.bmp) transformer CLI
+2.  mirror-v: flips the bitmap vertically
+3. mirror-h: flips the bitmap horizontally
+4. purpulaiz: purpulaiz the bitmap
+
+
+
 > 
 > lab 06 
 > Create a class to represent a Restaurant

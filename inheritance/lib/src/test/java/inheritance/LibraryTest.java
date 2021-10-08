@@ -10,6 +10,7 @@ class LibraryTest {
 
 
     @Test void one() {
+
         Restaurant test = new Restaurant("mac","1");
         assertEquals("Restaurant{name='mac' \n" +
                 ", stars=0 \n" +
@@ -22,6 +23,19 @@ class LibraryTest {
         assertEquals("Review{body='ali', author='ali' \n" +
                 ", stars=5 \n",ss.toString(),"dd");
     }
+
+    @Test void testReview(){
+        Review fromCustmer= new Review("good","adham",4);
+
+
+
+        assertEquals("Review{body='good', author='adham' \n" +
+                ", stars=4 \n",fromCustmer.toString());
+
+
+    }
+
+
 
     @Test void therd() {
         Shop shop=new Shop("shop","the Shop good",5);
