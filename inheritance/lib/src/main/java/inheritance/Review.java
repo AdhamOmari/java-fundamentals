@@ -1,12 +1,13 @@
 package inheritance;
 
-public class Review {
+public class Review  {
 
     private String body;
     private String author;
     private int stars;
 
     public Review(String body, String author, int stars) {
+        super();
         this.body = body;
         this.author = author;
 
@@ -29,6 +30,8 @@ public class Review {
     public int getStars() {
         return stars;
     }
+
+
 
     @Override
     public String toString() {

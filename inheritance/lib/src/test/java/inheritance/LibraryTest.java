@@ -37,4 +37,27 @@ class LibraryTest {
 
 
 
+    @Test void therd() {
+        Shop shop=new Shop("shop","the Shop good",5);
+        assertEquals("Shop{nameShop='shop', description='the Shop good', numDoller=5}",shop.toString(),"dd");
+    }
+    @Test void theater() {
+        Theater theater = new Theater("ali");
+        assertEquals("Theater{name='ali', reviewsArray=[Review{body='d', author='start' \n" +
+                        ", stars=2 \n" +
+                        ", Review{body='d', author='start' \n" +
+                        ", stars=3 \n" +
+                        ", Review{body='ss', author='start' \n" +
+                        ", stars=1 \n" +
+                        "], Movies=[b]}\n" +
+                        "Restaurant{name='mac' \n" +
+                        ", stars=0 \n" +
+                        ", price='1' \n" +
+                        ", reviews=[Review{body='d', author='start' \n" +
+                        ", stars=2 \n" +
+                        ", Review{body='ss', author='start' \n" +
+                        ", stars=1 ]> ",
+                theater.toString(),
+                "dd");
+    }
 }
